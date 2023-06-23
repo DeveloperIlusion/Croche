@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+--
+-- Host: localhost    Database: croche
+-- ------------------------------------------------------
+-- Server version	8.0.31
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `usuariorecuperasenha`
+--
+
+DROP TABLE IF EXISTS `usuariorecuperasenha`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuariorecuperasenha` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario_id` int NOT NULL,
+  `chave` varchar(250) NOT NULL,
+  `statusRegistro` int NOT NULL DEFAULT '1' COMMENT '1=Ativo;2=Inativo',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `FK1_usuariorecuperacaosenha` (`usuario_id`),
+  CONSTRAINT `FK1_usuariorecuperacaosenha` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuariorecuperasenha`
+--
+
+LOCK TABLES `usuariorecuperasenha` WRITE;
+/*!40000 ALTER TABLE `usuariorecuperasenha` DISABLE KEYS */;
+INSERT INTO `usuariorecuperasenha` VALUES (4,1,'9b0140baee5554a7e49fe94d28fdae99dbbdd37a',2,'2023-06-20 13:47:46'),(5,3,'b6187066c83edaac9fbfba9bfbabb18adbf36599',2,'2023-06-20 13:57:05'),(6,3,'f3d9f15eda40062a2e1d2c2038b5ddbb24e95185',2,'2023-06-20 13:58:55'),(7,3,'c143094734ecf43bf704f72bf297704efbd455c6',2,'2023-06-20 15:40:36'),(8,3,'67b6eb4314619acc9a62000d8472d9b63be96a06',2,'2023-06-20 16:03:29'),(9,3,'dd04912c76a7b884383b25acb87a185957abf917',2,'2023-06-20 19:04:25'),(10,3,'ddfd87a4070a9b1b3a749d64d3aa7fc75ab89984',2,'2023-06-21 00:08:10'),(11,3,'c400ff2fbd4d8676d222c344ba0eac578a5375df',2,'2023-06-21 00:14:37'),(12,3,'756c635aad3a93f679cd2e8fb84499ac736eba14',2,'2023-06-21 00:15:11'),(13,4,'b57660055b1681d6cb7f5b87ddfb0361bbca2b20',2,'2023-06-21 12:23:55'),(14,4,'d3b8ab686dd41072a9c68978403588a90571741f',2,'2023-06-21 12:26:53'),(15,3,'4f9fcac9568475ea8632c85ce5cd71f6b150c33f',2,'2023-06-21 12:32:16'),(16,3,'d60898b01ece3bd2f09c594925d47755272b37b5',2,'2023-06-21 12:33:09'),(17,3,'5a6ffeca30fe1119ba0d0d3ad22c9b64aea75d4e',2,'2023-06-21 12:53:37'),(18,3,'7f3c3a5003f92f5ddedc3fce7d2c7e4ab4aade05',2,'2023-06-21 12:53:57'),(19,3,'a6fa446093cabd55e43bfb0f5b75583de696016e',2,'2023-06-21 12:54:17'),(20,4,'82ae1a10831ffcf59603d9d2b54aac3843f133bc',2,'2023-06-21 12:55:16'),(21,3,'126cc3e8cf8e6ff57601ee84796dbc6a6f1b4a5f',2,'2023-06-21 13:26:09'),(22,3,'3f5a4671fea5a5611d5679db4b0c94ff8828edf5',2,'2023-06-21 13:26:25'),(23,3,'d9d22363651888c4e9500f7544aa01c62690c16d',2,'2023-06-21 13:31:29');
+/*!40000 ALTER TABLE `usuariorecuperasenha` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-06-21 14:32:16
