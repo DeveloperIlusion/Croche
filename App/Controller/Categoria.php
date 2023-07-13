@@ -64,22 +64,6 @@ class Categoria extends ControllerMain
             // error
             return Redirect::page("Categoria/form/insert");
         } else {
-
-            if (!empty($_FILES['imagem']['name'])) {
-
-                // Faz uploado da imagem
-                $nomeRetornado = UploadImages::upload($_FILES, 'categoria');
-
-                // se for boolean, significa que o upload falhou
-                if (is_bool($nomeRetornado)) {
-                    Session::set( 'inputs' , $post );
-                    return Redirect::page("Categoria/form/update/" . $post['id']);
-                }
-
-            } else {
-                $nomeRetornado = $post['nomeImagem'];
-            }
-
             if ($this->model->insert([
                 "Categoria" => $post['Categoria'],
                 "Descricao" => $post['Descricao'],
@@ -107,24 +91,6 @@ class Categoria extends ControllerMain
             // error
             return Redirect::page("Categoria/form/update/" . $post['id']);
         } else {
-
-            if (!empty($_FILES['imagem']['name'])) {
-
-                // Faz uploado da imagem
-                $nomeRetornado = UploadImages::upload($_FILES, 'categoria');
-
-                // se for boolean, significa que o upload falhou
-                if (is_bool($nomeRetornado)) {
-                    Session::set( 'inputs' , $post );
-                    return Redirect::page("Categoria/form/update/" . $post['id']);
-                }
-
-                UploadImages::delete($post['nomeImagem'], 'Categoria');
-
-            } else {
-                $nomeRetornado = $post['nomeImagem'];
-            }
-
             if ($this->model->update(
                 [
                     "id" => $post['id']

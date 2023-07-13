@@ -72,21 +72,6 @@ class BlogEtapas extends ControllerMain
             return Redirect::page("BlogEtapas/form/insert");
         } else {
 
-            if (!empty($_FILES['imagem']['name'])) {
-
-                // Faz uploado da imagem
-                $nomeRetornado = UploadImages::upload($_FILES, 'blog-etapas');
-
-                // se for boolean, significa que o upload falhou
-                if (is_bool($nomeRetornado)) {
-                    Session::set( 'inputs' , $post );
-                    return Redirect::page("BlogEtapas/form/update/" . $post['id']);
-                }
-
-            } else {
-                $nomeRetornado = $post['nomeImagem'];
-            }
-
             if ($this->model->insert([
                 "Titulo" => $post['Titulo'],
                 "Descricao" => $post['Descricao'],
@@ -115,24 +100,6 @@ class BlogEtapas extends ControllerMain
             // error
             return Redirect::page("BlogEtapas/form/update/" . $post['id']);
         } else {
-
-            if (!empty($_FILES['imagem']['name'])) {
-
-                // Faz uploado da imagem
-                $nomeRetornado = UploadImages::upload($_FILES, 'blog-etapas');
-
-                // se for boolean, significa que o upload falhou
-                if (is_bool($nomeRetornado)) {
-                    Session::set( 'inputs' , $post );
-                    return Redirect::page("BlogEtapas/form/update/" . $post['id']);
-                }
-
-                UploadImages::delete($post['nomeImagem'], 'blog-etapas');
-
-            } else {
-                $nomeRetornado = $post['nomeImagem'];
-            }
-
             if ($this->model->update(
                 [
                     "id" => $post['id']
