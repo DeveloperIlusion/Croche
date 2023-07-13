@@ -65,6 +65,17 @@ class Home extends ControllerMain
         }
     }
 
+    public function obrigado()
+    {
+        $this->loadView('Comuns/cabecalho');
+        $this->loadView('Comuns/menu');
+
+        $this->loadView("obrigado");
+
+        $this->loadView('Comuns/rodape');
+        return;
+    }
+
     public function criarConta()
     {
         $this->loadView('Comuns/cabecalho');
