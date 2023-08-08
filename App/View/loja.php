@@ -54,3 +54,11 @@
         <?php endif; ?>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('select').selectize({
+            sortField: 'text'
+        });
+    });
+</script>

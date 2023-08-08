@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?= baseUrl() ?>assets/DataTables/datatables.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?= baseUrl() ?>assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 
         <script src="<?= baseUrl() ?>assets/js/jquery-3.3.1.js"></script>
         <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.min.js"></script>
